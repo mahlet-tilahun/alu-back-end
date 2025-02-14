@@ -29,12 +29,11 @@ if __name__ == "__main__":
         f"{len(tasks)}):"
     )
     for task in completed_tasks:
-        print(f"\t {task['title']}")   
-    file_name = f"{emp_id}.csv"
+        print(f"\t {task['title']}")
+        file_name = f"{emp_id}.csv"
     with open(file_name, "w", newline='') as csvfile:
         writer = csv.writer(csvfile, delimiter=',', quoting=csv.QUOTE_ALL)
         for task in tasks:
             writer.writerow([
                 emp_id, username, task['completed'], task['title']
             ])
-
