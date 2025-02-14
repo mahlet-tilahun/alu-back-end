@@ -20,4 +20,3 @@ if __name__ == "__main__":
         todo_all[user_id] = task_list
     with open("todo_all_employees.json", "w") as f:
         json.dump(todo_all, f, indent=4)
-
