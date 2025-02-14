@@ -19,6 +19,6 @@ if __name__ == "__main__":
     emp_name = user_response.json().get('name')
     completed_tasks = [task for task in tasks if task['completed']]
     print(f"Employee {emp_name} is done with tasks"
-      f"({len(completed_tasks)}/{len(tasks)}):")
+          f"({len(completed_tasks)}/{len(tasks)}):")
     for task in completed_tasks:
         print(f"\t {task['title']}")
