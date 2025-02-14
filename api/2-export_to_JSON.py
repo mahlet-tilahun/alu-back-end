@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-Script that retrieves and displays an employee's TODO list progress using a REST API and exports the data in JSON format.
+Script that retrieves and displays an employee's TODO list progress 
+using a REST API and exports the data in JSON format.
 """
 
 import json
@@ -18,11 +19,15 @@ if __name__ == "__main__":
     user_data = user_response.json()
     emp_name = user_data.get('name')
     username = user_data.get('username')
-    completed_tasks = [task for task in tasks if task['completed']]
-    print(f"Employee {emp_name} is done with tasks ({len(completed_tasks)}/{len(tasks)}):")
+    completed_tasks =[task 
+            for task in tasks 
+            if task['completed']]
+    print(f"Employee {emp_name} is done with tasks 
+            ({len(completed_tasks)}/{len(tasks)}):")
     for task in completed_tasks:
         print(f"\t {task['title']}")
-    tasks_list = [{"task": task["title"], "completed": task["completed"], "username": username} for task in tasks]
+    tasks_list = [{"task": task["title"], "completed": task["completed"], 
+        "username": username} for task in tasks]
     json_data = {emp_id: tasks_list}
     file_name = f"{emp_id}.json"
     with open(file_name, "w") as json_file:
